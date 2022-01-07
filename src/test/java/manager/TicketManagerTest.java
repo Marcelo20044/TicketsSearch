@@ -3,6 +3,8 @@ package manager;
 import domain.Ticket;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class TicketManagerTest {
@@ -17,8 +19,10 @@ class TicketManagerTest {
         manager.add(KrasnoyarskMoscowNordwind);
         manager.add(KrasnoyarskMoscowAeroflot);
 
+
         Ticket[] expected = new Ticket[]{KrasnoyarskMoscowPobeda, KrasnoyarskMoscowNordwind, KrasnoyarskMoscowAeroflot};
         Ticket[] actual = manager.searchBy("KJA");
+        Arrays.sort(actual);
         assertArrayEquals(expected, actual);
     }
 
@@ -30,6 +34,7 @@ class TicketManagerTest {
 
         Ticket[] expected = new Ticket[]{KrasnoyarskMoscowNordwind, KrasnoyarskMoscowAeroflot};
         Ticket[] actual = manager.searchBy("SVO");
+        Arrays.sort(actual);
         assertArrayEquals(expected, actual);
     }
 }

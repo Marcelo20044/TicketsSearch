@@ -2,6 +2,7 @@ package manager;
 
 import domain.Ticket;
 import repository.TicketRepository;
+import java.util.Comparator;
 
 public class TicketManager {
     TicketRepository repository = new TicketRepository();
@@ -29,6 +30,9 @@ public class TicketManager {
         }
         return result;
     }
+
+
+
 
 
     public boolean matches(Ticket ticket, String search) {
