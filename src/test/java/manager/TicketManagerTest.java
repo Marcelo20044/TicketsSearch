@@ -22,7 +22,6 @@ class TicketManagerTest {
 
         Ticket[] expected = new Ticket[]{KrasnoyarskMoscowPobeda, KrasnoyarskMoscowNordwind, KrasnoyarskMoscowAeroflot};
         Ticket[] actual = manager.searchBy("KJA");
-        Arrays.sort(actual);
         assertArrayEquals(expected, actual);
     }
 
@@ -34,7 +33,6 @@ class TicketManagerTest {
 
         Ticket[] expected = new Ticket[]{KrasnoyarskMoscowNordwind, KrasnoyarskMoscowAeroflot};
         Ticket[] actual = manager.searchBy("SVO");
-        Arrays.sort(actual);
         assertArrayEquals(expected, actual);
     }
 }

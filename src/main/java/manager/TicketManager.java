@@ -2,6 +2,9 @@ package manager;
 
 import domain.Ticket;
 import repository.TicketRepository;
+
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 
 public class TicketManager {
@@ -23,6 +26,7 @@ public class TicketManager {
         for (Ticket ticket: repository.findAll()) {
             if (matches(ticket, text)) {
                 Ticket[] tmp = new Ticket[result.length + 1];
+                Arrays.sort(result);
                 System.arraycopy(result, 0, tmp, 0, result.length);
                 tmp[tmp.length - 1] = ticket;
                 result = tmp;
@@ -30,9 +34,6 @@ public class TicketManager {
         }
         return result;
     }
-
-
-
 
 
     public boolean matches(Ticket ticket, String search) {
@@ -45,6 +46,9 @@ public class TicketManager {
             return false;
         }
 
+
 }
+
+
 
 

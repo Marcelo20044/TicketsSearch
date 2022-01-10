@@ -2,6 +2,8 @@ package repository;
 
 import domain.Ticket;
 
+import java.util.Arrays;
+
 public class TicketRepository {
     private Ticket[] items = new Ticket[0];
 
@@ -40,6 +42,5 @@ public class TicketRepository {
         }
         items = tmp;
     }
-
 
 }
